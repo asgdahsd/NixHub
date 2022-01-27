@@ -84,12 +84,12 @@ MainSection:CreateButton("Tp to demon", function()
     game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame = game.Workspace.LivingThings:FindFirstChild("Demon").HumanoidRootPart.CFrame
 end)
 
-MainSecton:CreateButton("Tp to sound trainer", function()
-   game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame = game.Workspace.IntNpcs("SoundTrainer").HumanoidRootPart.CFrame
+MainSection:CreateButton("Tp to Sound Trainer", function()
+   game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame = game.Workspace.IntNpcs:FindFirstChild("SoundTrainer").HumanoidRootPart.CFrame
 end)
 
-MainSecton:CreateButton("Tp to sound trainer", function()
-   game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame = game.Workspace.IntNpcs("GyutaroTrainer").HumanoidRootPart.CFrame
+MainSection:CreateButton("Tp to Gyutaro Trainer", function()
+   game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame = game.Workspace.IntNpcs:FindFirstChild("GyutaroTrainer").HumanoidRootPart.CFrame
 end)
 
 MS:CreateButton("Auto farm and sell",function()
