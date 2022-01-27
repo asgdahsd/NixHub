@@ -1,7 +1,7 @@
 --Infinite Breathing
 _G.toggle = true
-
-while true do
+if _G.toggle == true then do
+while wait() do
     if _G.toggle then
 
 while wait() do
@@ -11,5 +11,7 @@ local args = {
 }
 
 game:GetService("Players").LocalPlayer.Character.Scripts.Server.Breathe:FireServer(unpack(args))
-
+end
+end
+end
 
