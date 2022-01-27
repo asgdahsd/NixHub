@@ -5,6 +5,7 @@ local MainSection = Main:CreateSection("Teleports")
 local Farm = CoastingLibrary:CreateTab("Farm")
 local MS = Farm:CreateSection("MONEY FARM")
 local AF = Farm:CreateSection("Farm")
+local ks = Main:CreateSection("Functions")
 
 MainSection:CreateButton("Tp to Final Selection", function()
    game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-627.419617, 229.138626, -2269.5647, -0.00877034664, 0, -0.999961495, 0, 1, 0, 0.999961495, 0, -0.00877034664)
@@ -49,7 +50,7 @@ MainSection:CreateButton("Tp to Blood Reset", function()
 end)
 
 MainSection:CreateButton("Tp to Mist Breathing", function()
-    game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(1017.25824, 401.050964, -1696.51331, -0.999922752, 0, 0.0124301296, 0, 1, 0, -0.0124301296, 0, -0.999922752)
+    game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(948.322266, 401.932648, -1819.08667, 0.0123367906, -0.0087215798, 0.999886036, 0.0088428976, 0.999923825, 0.00861280411, -0.999884963, 0.00873563252, 0.0124129653)
 end)
 
 MainSection:CreateButton("Tp to Akaza Trainer", function()
@@ -61,9 +62,8 @@ MainSection:CreateButton("Tp to Kill Demon Giver", function()
 end)
 
 MainSection:CreateButton("Tp to Show stats guy", function()
-    game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(1011.29749, 373.658386, -1632.14844, 0.999467671, -0, -0.0326253772, 0, 1, -0, 0.0326253772, 0, 0.999467671)
+    game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(882.08783, 374.514618, -1815.81836, -0.0325694084, 0, -0.999469459, 0, 1, 0, 0.999469459, 0, -0.0325694084)
 end)
-
 MainSection:CreateButton("Tp to Mission1", function()
     game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(995.356445, 372.711304, -1734.12476, 0.999467671, -0, -0.0326253772, 0, 1, -0, 0.0326253772, 0, 0.999467671)
 end)
@@ -107,4 +107,8 @@ end
 -- Sell everything
 fireclickdetector(Sell);
 end
+end)
+
+ks:CreateButton("Destroy GUI(Unavalible)",function()
+	print("maintaince")
 end)
