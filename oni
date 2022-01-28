@@ -93,7 +93,8 @@ MainSection:CreateButton("Tp to Gyutaro Trainer", function()
 end)
 
 MainSection:CreateButton("Tp to random player", function()
-    game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame = game.Players:FindFirstChildOfClass("Player").Character.HumanoidRootPart.CFrame
+    local plr = game.Players
+    game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame = game.Players.plr.Character.HumanoidRootPart.CFrame
 end)
 MS:CreateButton("Auto farm and sell", function()
     while wait() do
