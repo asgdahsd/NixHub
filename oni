@@ -124,22 +124,7 @@ ks:CreateButton("Get Old Nichirin", function()
     fireclickdetector(game:GetService("Workspace").Buyable["Old Nichirin"].ClickDetector)
 end)
 
-MS:CreateButton("Auto farm and sell", function()
-    while wait() do
-    local Clickable = game:GetService("Workspace").ClickableStuff
-local Sell = game:GetService("Workspace").Buyable.SellTrinkets.Head.ClickDetector
 
--- Pickup what we can.
-for i,v in pairs(Clickable:GetDescendants()) do
-    if v:IsA("ClickDetector") then
-        fireclickdetector(v);
-    end
-end
-
--- Sell everything
-fireclickdetector(Sell);
-end
-end)
 
 MS:CreateButton("Hide Username", function()
     local playerService = game:GetService("Players")
