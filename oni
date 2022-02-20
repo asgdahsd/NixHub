@@ -119,12 +119,40 @@ MS:CreateButton("farm money", function()
 end)
 
 
+ks:CreateButton("reset while in combat", function()
+    game.Players.LocalPlayer.Character.Humanoid.Health = 0
+end)
+
+
+ks:CreateButton("Get Blue spider Lily", function()
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game:GetService("Workspace").ClickableStuff:FindFirstChild("Blue Spider Lily").Handle.CFrame
+    wait(2)
+    fireclickdetector(game:GetService("Workspace").ClickableStuff["Blue Spider Lily"].ClickDetector)
+end)
+
+
+
 
 ks:CreateButton("Get Old Nichirin", function()
     fireclickdetector(game:GetService("Workspace").Buyable["Old Nichirin"].ClickDetector)
 end)
 
+MS:CreateButton("Auto farm and sell", function()
+    while wait() do
+    local Clickable = game:GetService("Workspace").ClickableStuff
+local Sell = game:GetService("Workspace").Buyable.SellTrinkets.Head.ClickDetector
 
+-- Pickup what we can.
+for i,v in pairs(Clickable:GetDescendants()) do
+    if v:IsA("ClickDetector") then
+        fireclickdetector(v);
+    end
+end
+
+-- Sell everything
+fireclickdetector(Sell);
+end
+end)
 
 MS:CreateButton("Hide Username", function()
     local playerService = game:GetService("Players")
