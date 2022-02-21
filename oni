@@ -1,12 +1,12 @@
 local CoastingLibrary = loadstring(game:HttpGet("https://pastebin.com/raw/3gQQtaKX"))()
 
 local Main = CoastingLibrary:CreateTab("Main")
-local MainSection = Main:CreateSection("Teleports")
+local MainSection = Main:CreateSection("Main")
 local Farm = CoastingLibrary:CreateTab("Farm")
 local MS = Farm:CreateSection("MONEY FARM")
 local AF = Farm:CreateSection("Farm")
 local ks = Main:CreateSection("Functions")
-local as = Main:CreateSection("Stats")
+
 
 MainSection:CreateButton("Tp to Final Selection", function()
    game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame = game:GetService("Workspace").IntNpcs.FinalSelectionSub.HumanoidRootPart
@@ -55,7 +55,7 @@ MainSection:CreateButton("Tp to Akaza Trainer", function()
     game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame = game:GetService("Workspace").IntNpcs.AkazaTrainer.HumanoidRootPart.CFrame
 end)
 
-MainSection:CreateButton("Tp to Show stats guy", function()
+ks:CreateButton("Tp to Show stats guy", function()
     game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame = game:GetService("Workspace").IntNpcs.ShowStats.HumanoidRootPart.CFrame
 end)
 
@@ -91,7 +91,7 @@ MainSection:CreateButton("Tp to killdemonsgiver", function()
 end)
 
 
-MainSection:CreateButton("Tp to mission(demon)", function()
+MainSection:CreateButton("Tp to mission(slayer)", function()
     game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game:GetService("Workspace").IntNpcs.Mission.HumanoidRootPart.CFrame
 end)
 
@@ -110,18 +110,35 @@ end)
 
 
 MS:CreateButton("farm money", function()
-    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game:GetService("Workspace").IntNpcs.LetterGirl.HumanoidRootPart.CFrame
-    wait(2)
-    fireclickdetector(game:GetService("Workspace").IntNpcs.LetterGirl.ClickDetector)
-    wait(5)
-    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game:GetService("Workspace").IntNpcs.NoUse.MissiommG.HumanoidRootPart.CFrame
-    fireclickdetector(game:GetService("Workspace").IntNpcs.NoUse.MissiommG.ClickDetector)
+    while Wait(0.1) do
+if getgenv().autofarm == false then break end
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-1122.8292236328125, 212.28228759765625, -1751.1221923828125)
+    local A_2 = "LetterQuestGuy"
+    local Event = game:GetService("ReplicatedStorage").Remotes.GiverQuest
+    Event:FireServer(A_2)
+task.wait(1)
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(265.4073791503906, 252.47171020507812, -2272.247802734375)
+    local A_1 = "LetterQuest"
+    local Event = game:GetService("ReplicatedStorage").Remotes.GiverQuest
+    Event:FireServer(A_1)
+task.wait(1)
+end
+end)
+
+
+MainSection:CreateButton("Tp to random slayer", function()
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Workspace.LivingThings:FindFirstChild("Slayer").HumanoidRootPart.CFrame
+end)
+
+ks:CreateButton("Tp to show stats guy(demon)", function()
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(791.625244, 422.966919, -1897.21826, 0.873496294, 0, 0.486830831, 0, 1, 0, -0.486830831, 0, 0.873496294)
 end)
 
 
 ks:CreateButton("reset while in combat", function()
     game.Players.LocalPlayer.Character.Humanoid.Health = 0
 end)
+
 
 
 ks:CreateButton("Get Blue spider Lily", function()
@@ -137,34 +154,59 @@ ks:CreateButton("Get Old Nichirin", function()
     fireclickdetector(game:GetService("Workspace").Buyable["Old Nichirin"].ClickDetector)
 end)
 
-MS:CreateButton("Auto farm and sell", function()
-    while wait() do
-    local Clickable = game:GetService("Workspace").ClickableStuff
-local Sell = game:GetService("Workspace").Buyable.SellTrinkets.Head.ClickDetector
 
--- Pickup what we can.
-for i,v in pairs(Clickable:GetDescendants()) do
-    if v:IsA("ClickDetector") then
-        fireclickdetector(v);
-    end
+
+ks:CreateButton("Check DemonKills(Press F9)", function()
+    print("Demon Kills:", game.Players.LocalPlayer.PlayerFolder.Info.DemonKills.Value)
+end)
+
+
+ks:CreateButton("Check HumanKills(Press F9)", function()
+    print("Human Kills:", game.Players.LocalPlayer.PlayerFolder.Info.HumanKills.Value)
+end)
+
+AF:CreateButton("Auto farm(Hold Katana)", function()
+    _G.Farm = true
+if _G.Farm == true then
+while wait() do
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = 
+game.Workspace.LivingThings:FindFirstChild("Demon").Head.CFrame
+
+local args = {
+    [1] = "Release"
+}
+
+game:GetService("ReplicatedStorage").Remotes.CombatRemotes.Katana:FireServer(unpack(args))
 end
-
--- Sell everything
-fireclickdetector(Sell);
 end
 end)
 
-MS:CreateButton("Hide Username", function()
-    local playerService = game:GetService("Players")
-    playerService.CharacterAdded:Connect(function (plr)
-        plr.CharacterAdded:Connect(function (char)
-            Humanoid.DisplayDistanceType = Enum.HumanoidDisplayDistanceType.None
-        end)
-    end)
+
+AF:CreateButton("Auto farm(Hold Fists Demon)", function()
+    _G.Farm = true
+if _G.Farm == true then
+while wait() do
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = 
+game.Workspace.LivingThings:FindFirstChild("Slayer").Head.CFrame
+
+
+
+local args = {
+    [1] = "Release"
+}
+
+game:GetService("ReplicatedStorage").Remotes.CombatRemotes.Fists:FireServer(unpack(args))
+
+end
+end
 end)
 
-MainSection:CreateButton("Check DemonKills(Press F9)", function()
-    print("DK:", game.Players.LocalPlayer.PlayerFolder.Info.DemonKills.Value)
+
+
+ks:CreateButton("Rejoin", function()
+    local tps = game:GetService("Teleport Service")
+    local placeid = game.PlaceId 
+    local player = game.Players.LocalPlayer
+
+    tps:Teleport(placeid, player)
 end)
-
-
