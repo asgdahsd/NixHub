@@ -9,7 +9,7 @@ local ks = Main:CreateSection("Functions")
 
 
 MainSection:CreateButton("Tp to Final Selection", function()
-   game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame = game:GetService("Workspace").IntNpcs.FinalSelectionSub.HumanoidRootPart
+   game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame = game:GetService("Workspace").IntNpcs.FinalSelectionSub.HumanoidRootPart.CFrame
 end)
 
 MainSection:CreateButton("TP to Water Trainer", function()
