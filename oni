@@ -230,3 +230,44 @@ game:GetService("ReplicatedStorage").Remotes.CombatRemotes.Katana:FireServer(unp
 end
 end
 end)
+
+
+
+
+AF:CreateButton("Auto farm(Hold Katana, cannot stop)", function()
+while wait() do
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = 
+game.Workspace.LivingThings:FindFirstChild("Demon").Head.CFrame
+
+local args = {
+    [1] = "Release"
+}
+
+game:GetService("ReplicatedStorage").Remotes.CombatRemotes.Katana:FireServer(unpack(args))
+end
+end
+end)
+
+
+
+
+
+AF:CreateButton("Auto farm(Hold Fists Demon, cannot stop)", function()
+
+while wait() do
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = 
+game.Workspace.LivingThings:FindFirstChild("Slayer").Head.CFrame
+
+
+
+local args = {
+    [1] = "Release"
+}
+
+game:GetService("ReplicatedStorage").Remotes.CombatRemotes.Fists:FireServer(unpack(args))
+
+end
+end
+end)
+
+
