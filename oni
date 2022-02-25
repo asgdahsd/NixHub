@@ -215,22 +215,6 @@ end)
 
 
 
-ks:CreateButton("Autofarm(Cannot stop"), function()
-   _G.Farm = true
-if _G.Farm == true then
-while wait() do
-game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = 
-game.Workspace.LivingThings:FindFirstChild("Demon").Head.CFrame
-
-local args = {
-    [1] = "Release"
-}
-
-game:GetService("ReplicatedStorage").Remotes.CombatRemotes.Katana:FireServer(unpack(args))
-end
-end
-end)
-
 
 
 
